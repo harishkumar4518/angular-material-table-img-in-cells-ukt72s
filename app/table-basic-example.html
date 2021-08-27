@@ -1,0 +1,37 @@
+<h2>Order Depth</h2>
+<div class="order">
+  <div class="flax-box">
+    <div class="flax6">Order Depth</div>
+    <div class="flax6 textright">Omsaetning: 96.405.001</div>
+  </div>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="position">
+      <th class="bulvol" mat-header-cell *matHeaderCellDef> Bud vol.</th>
+      <td class="bulvol1" mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th class="Bud" mat-header-cell *matHeaderCellDef> Bud </th>
+      <td class="Bud1" mat-cell *matCellDef="let element">{{element.name}}
+        <mat-progress-bar mode="determinate" class="progr-right" [color]="color" value="40"></mat-progress-bar>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="weight">
+      <th class="udbud" mat-header-cell *matHeaderCellDef> Udbud </th>
+      <td class="udbud1" mat-cell *matCellDef="let element"> {{element.weight}}
+        <mat-progress-bar mode="determinate" value="10"></mat-progress-bar>
+      </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="symbol">
+      <th class="udbudvol" mat-header-cell *matHeaderCellDef> Udbud vol. </th>
+      <td class="udbudvol1" mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns">Order Depth</tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
